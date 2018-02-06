@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.pmmq.vmd_poker.ui.main.MainViewModel"/>
+        <variable
+            name="firstPlayer"
+            type="com.pmmq.vmd_poker.data.model.Player"/>
+        <variable
+            name="secondPlayer"
+            type="com.pmmq.vmd_poker.data.model.Player"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.pmmq.vmd_poker.ui.main.MainActivity">
+        <android.support.v7.widget.AppCompatTextView
+            android:text="Poker"
+            android:gravity="center"
+            android:textSize="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_weight=".5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <android.support.v7.widget.AppCompatTextView
+                    android:textSize="25dp"
+                    android:text="@{viewModel.firstPlayer.MName}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <android.support.v7.widget.AppCompatTextView
+                    android:textSize="20dp"
+                    android:text="@{viewModel.firstPlayer.MHand.get(0).getCardName()}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <android.support.v7.widget.AppCompatTextView
+                    android:textSize="20dp"
+                    android:text="@{viewModel.firstPlayer.MHand.get(1).getCardName()}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <android.support.v7.widget.AppCompatTextView
+                    android:textSize="20dp"
+                    android:text="@{viewModel.firstPlayer.MHand.get(2).getCardName()}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <android.support.v7.widget.AppCompatTextView
+                    android:textSize="20dp"
+                    android:text="@{viewModel.firstPlayer.MHand.get(3).getCardName()}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <android.support.v7.widget.AppCompatTextView
+                    android:textSize="20dp"
+                    android:text="@{viewModel.firstPlayer.MHand.get(4).getCardName()}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="10dp"
+                android:gravity="right"
+                android:orientation="vertical"
+                android:layout_weight=".5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <android.support.v7.widget.AppCompatTextView
+                    android:textSize="25dp"
+                    android:text="@{viewModel.secondPlayer.MName}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <android.support.v7.widget.AppCompatTextView
+                    android:textSize="20dp"
+                    android:text="@{viewModel.secondPlayer.MHand.get(0).getCardName()}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <android.support.v7.widget.AppCompatTextView
+                    android:textSize="20dp"
+                    android:text="@{viewModel.secondPlayer.MHand.get(1).getCardName()}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <android.support.v7.widget.AppCompatTextView
+                    android:textSize="20dp"
+                    android:text="@{viewModel.secondPlayer.MHand.get(2).getCardName()}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <android.support.v7.widget.AppCompatTextView
+                    android:textSize="20dp"
+                    android:text="@{viewModel.secondPlayer.MHand.get(3).getCardName()}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <android.support.v7.widget.AppCompatTextView
+                    android:textSize="20dp"
+                    android:text="@{viewModel.secondPlayer.MHand.get(4).getCardName()}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:text="@{viewModel.status}"
+            android:shadowColor="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:text="new game"
+            android:onClick="@{viewModel::onNewGameClick}"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+        </android.support.v7.widget.AppCompatButton>
+    </LinearLayout>
+
+</layout>
+
+
