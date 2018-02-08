@@ -20,16 +20,16 @@ How to use
 
 Test Coverage
 - Player
- - testComputeHandCard
+  - testComputeHandCard
 - Card
- - getCardNameCorrectFormat
+  - getCardNameCorrectFormat
 - Deck
- - initWithCorrectData
- - suffleCorrect
- - drawWorkCorrect
+  - initWithCorrectData
+  - suffleCorrect
+  - drawWorkCorrect
 - MainViewModel
- - initCorrectly
- - dealoutCardCorrectly
- - checkStatusTieCase
- - checkStatusFirstPlayerWin
- - checkStatusSecondPlayerWin
+  - initCorrectly
+  - dealoutCardCorrectly
+  - checkStatusTieCase
+  - checkStatusFirstPlayerWin
+  - checkStatusSecondPlayerWin
