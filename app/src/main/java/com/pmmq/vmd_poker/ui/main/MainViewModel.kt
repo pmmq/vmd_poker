@@ -39,11 +39,11 @@ class MainViewModel() : ViewModel() {
         }
     }
 
-    public fun onNewGameClick(view: View) {
+    fun onNewGameClick(view: View) {
         newGame()
     }
 
-    public fun newGame() {
+    fun newGame() {
         if (mDeck.cards.size < 52) mDeck.initDeck()
         mDeck.shuffle()
         dealOutCard()
@@ -66,7 +66,7 @@ class MainViewModel() : ViewModel() {
         mSecondPlayer.notifyChange()
     }
 
-    private fun dealOutCard() {
+    public fun dealOutCard() {
         mFirstPlayer.get().mHand.clear()
         mSecondPlayer.get().mHand.clear()
         // enable this comment to do manual card
@@ -83,24 +83,18 @@ class MainViewModel() : ViewModel() {
 //        mSecondPlayer.mHand.add(Card(Card.Suit.D,Card.Value.FIVE))
 
         // enable auto deal out card
-        mFirstPlayer.get().mHand.add(mDeck.draw())
-        mSecondPlayer.get().mHand.add(mDeck.draw())
-        mFirstPlayer.get().mHand.add(mDeck.draw())
-        mSecondPlayer.get().mHand.add(mDeck.draw())
-        mFirstPlayer.get().mHand.add(mDeck.draw())
-        mSecondPlayer.get().mHand.add(mDeck.draw())
-        mFirstPlayer.get().mHand.add(mDeck.draw())
-        mSecondPlayer.get().mHand.add(mDeck.draw())
-        mFirstPlayer.get().mHand.add(mDeck.draw())
-        mSecondPlayer.get().mHand.add(mDeck.draw())
+        for(index in 1..5){
+            mFirstPlayer.get().mHand.add(mDeck.draw())
+            mSecondPlayer.get().mHand.add(mDeck.draw())
+        }
     }
 
-    public fun bind(databinding: ActivityMainBinding?) {
+    fun bind(databinding: ActivityMainBinding?) {
         mDataBinding = databinding
         mDataBinding?.viewModel = this
     }
 
-    protected override fun onCleared() {
+    override fun onCleared() {
         super.onCleared()
     }
 }
