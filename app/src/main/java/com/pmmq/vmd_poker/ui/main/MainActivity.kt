@@ -22,8 +22,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mainViewModel = MainViewModel.create(this)
-        mainViewModel.dataBinding = dataBinding as ActivityMainBinding
-        mainViewModel.bind()
+        mainViewModel.bind(dataBinding)
     }
 
     override fun getLayouteRes(): Int {

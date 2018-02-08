@@ -6,12 +6,12 @@ import kotlin.collections.HashMap
 /**
  * Created by pmmq on 2/6/2018.
  */
-class Player(name: String,hand: ArrayList<Card>) {
+class Player(name: String, hand: ArrayList<Card>) {
 
     var mName = name
     var mHand: ArrayList<Card> = hand
     var mScore: Int = 0
-    lateinit var mHighCard:Card
+    lateinit var mHighCard: Card
     lateinit var mHandType: HandType
 
     fun compute() {
@@ -51,15 +51,15 @@ class Player(name: String,hand: ArrayList<Card>) {
                 }
             }
             else -> {
-                val isStraight = if(suitGroup == 1) true else false
+                val isStraight = if (suitGroup == 1) true else false
                 val isFlush = isFlush()
-                if(isStraight && isFlush){
+                if (isStraight && isFlush) {
                     mHandType = HandType.STRAIGHT_FLUSH
-                }else if(isStraight){
+                } else if (isStraight) {
                     mHandType = HandType.STRAIGHT
-                }else if(isFlush){
+                } else if (isFlush) {
                     mHandType = HandType.FLUSH
-                }else{
+                } else {
                     mHandType = HandType.HIGH_SCORE
                 }
             }
@@ -69,12 +69,13 @@ class Player(name: String,hand: ArrayList<Card>) {
     private fun isFlush(): Boolean {
         val valueSorted = mHand.sortedBy { it.point.value }
         mHighCard = valueSorted[4]
-        if(valueSorted[0].point.value + 4 == valueSorted[4].point.value ||
-                valueSorted[4].point.value == 14 && valueSorted[0].point.value == 2 && valueSorted[3].point.value == 5){
+        if (valueSorted[0].point.value + 4 == valueSorted[4].point.value ||
+                valueSorted[4].point.value == 14 && valueSorted[0].point.value == 2 && valueSorted[3].point.value == 5) {
             return true
         }
         return false
     }
+
     public enum class HandType(val priority: Int) {
         HIGH_SCORE(0),
         ONE_PAIR(1),

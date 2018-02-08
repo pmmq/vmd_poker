@@ -6,12 +6,6 @@
         <variable
             name="viewModel"
             type="com.pmmq.vmd_poker.ui.main.MainViewModel"/>
-        <variable
-            name="firstPlayer"
-            type="com.pmmq.vmd_poker.data.model.Player"/>
-        <variable
-            name="secondPlayer"
-            type="com.pmmq.vmd_poker.data.model.Player"/>
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -40,32 +34,32 @@
                 android:layout_height="wrap_content">
                 <android.support.v7.widget.AppCompatTextView
                     android:textSize="25dp"
-                    android:text="@{viewModel.firstPlayer.MName}"
+                    android:text="@{viewModel.MFirstPlayer.MName}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <android.support.v7.widget.AppCompatTextView
                     android:textSize="20dp"
-                    android:text="@{viewModel.firstPlayer.MHand.get(0).getCardName()}"
+                    android:text="@{viewModel.MFirstPlayer.MHand.get(0).getCardName()}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <android.support.v7.widget.AppCompatTextView
                     android:textSize="20dp"
-                    android:text="@{viewModel.firstPlayer.MHand.get(1).getCardName()}"
+                    android:text="@{viewModel.MFirstPlayer.MHand.get(1).getCardName()}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <android.support.v7.widget.AppCompatTextView
                     android:textSize="20dp"
-                    android:text="@{viewModel.firstPlayer.MHand.get(2).getCardName()}"
+                    android:text="@{viewModel.MFirstPlayer.MHand.get(2).getCardName()}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <android.support.v7.widget.AppCompatTextView
                     android:textSize="20dp"
-                    android:text="@{viewModel.firstPlayer.MHand.get(3).getCardName()}"
+                    android:text="@{viewModel.MFirstPlayer.MHand.get(3).getCardName()}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <android.support.v7.widget.AppCompatTextView
                     android:textSize="20dp"
-                    android:text="@{viewModel.firstPlayer.MHand.get(4).getCardName()}"
+                    android:text="@{viewModel.MFirstPlayer.MHand.get(4).getCardName()}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -79,39 +73,39 @@
                 android:layout_height="wrap_content">
                 <android.support.v7.widget.AppCompatTextView
                     android:textSize="25dp"
-                    android:text="@{viewModel.secondPlayer.MName}"
+                    android:text="@{viewModel.MSecondPlayer.MName}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <android.support.v7.widget.AppCompatTextView
                     android:textSize="20dp"
-                    android:text="@{viewModel.secondPlayer.MHand.get(0).getCardName()}"
+                    android:text="@{viewModel.MSecondPlayer.MHand.get(0).getCardName()}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <android.support.v7.widget.AppCompatTextView
                     android:textSize="20dp"
-                    android:text="@{viewModel.secondPlayer.MHand.get(1).getCardName()}"
+                    android:text="@{viewModel.MSecondPlayer.MHand.get(1).getCardName()}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <android.support.v7.widget.AppCompatTextView
                     android:textSize="20dp"
-                    android:text="@{viewModel.secondPlayer.MHand.get(2).getCardName()}"
+                    android:text="@{viewModel.MSecondPlayer.MHand.get(2).getCardName()}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <android.support.v7.widget.AppCompatTextView
                     android:textSize="20dp"
-                    android:text="@{viewModel.secondPlayer.MHand.get(3).getCardName()}"
+                    android:text="@{viewModel.MSecondPlayer.MHand.get(3).getCardName()}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <android.support.v7.widget.AppCompatTextView
                     android:textSize="20dp"
-                    android:text="@{viewModel.secondPlayer.MHand.get(4).getCardName()}"
+                    android:text="@{viewModel.MSecondPlayer.MHand.get(4).getCardName()}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
         </LinearLayout>
 
         <android.support.v7.widget.AppCompatTextView
-            android:text="@{viewModel.status}"
+            android:text="@{viewModel.MStatus}"
             android:shadowColor="@color/colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
