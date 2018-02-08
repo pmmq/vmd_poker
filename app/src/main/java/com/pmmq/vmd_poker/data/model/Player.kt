@@ -26,7 +26,7 @@ class Player(name: String, hand: ArrayList<Card>) {
             // count suit
             if (suitCounter.containsKey(card.suit)) suitCount = suitCounter.get(card.suit)?.plus(1) as Int
             suitCounter.put(card.suit, suitCount ?: 1)
-            print(" ${card.point.value}")
+//            print(" ${card.point.value}")
         }
         mHighCard = mHand.maxBy { card: Card -> card.point.value } as Card
         println("")
@@ -51,8 +51,8 @@ class Player(name: String, hand: ArrayList<Card>) {
                 }
             }
             else -> {
-                val isStraight = if (suitGroup == 1) true else false
-                val isFlush = isFlush()
+                val isStraight = isStraight()
+                val isFlush = if (suitGroup == 1) true else false
                 if (isStraight && isFlush) {
                     mHandType = HandType.STRAIGHT_FLUSH
                 } else if (isStraight) {
@@ -66,7 +66,7 @@ class Player(name: String, hand: ArrayList<Card>) {
         }
     }
 
-    private fun isFlush(): Boolean {
+    private fun isStraight(): Boolean {
         val valueSorted = mHand.sortedBy { it.point.value }
         mHighCard = valueSorted[4]
         if (valueSorted[0].point.value + 4 == valueSorted[4].point.value ||
