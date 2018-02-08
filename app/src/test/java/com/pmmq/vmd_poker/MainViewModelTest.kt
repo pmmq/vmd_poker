@@ -83,7 +83,7 @@ class  MainViewModelTest(){
     }
 
     @Test
-    fun checkStatusFirstPlayer(){
+    fun checkStatusFirstPlayerWin(){
         val spyViewModel = Mockito.spy(mainViewModel)
         Mockito.doNothing().`when`(spyViewModel)
                 .dealOutCard()

@@ -18,7 +18,7 @@ class DeckModelTest(){
     }
 
     @Test
-    fun initCorrectData(){
+    fun initWithCorrectData(){
         Assert.assertTrue(deck.cards.size == 52)
         Assert.assertEquals(deck.cards.get(0).getCardName(), "ACE of C")
         Assert.assertEquals(deck.cards.get(13).getCardName(), "ACE of D")
